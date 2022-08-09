@@ -6,6 +6,7 @@ use App\ContactForm;
 use App\FlashMessage;
 use App\HttpResponse;
 use App\MailerController;
+use App\Utilities;
 use Dotenv\Dotenv;
 
 //インスタスを作成
@@ -76,7 +77,7 @@ try {
 } finally {
 
     //リダイレクトさせる
-    HttpResponse::redirect('http://'.$_SERVER['HTTP_HOST'].'/');
+    HttpResponse::redirect(Utilities::siteURL().'/');
 
 }
 
